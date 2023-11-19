@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News</title>
+</head>
+<body>
+    <script>
+        const apiKey = 'Y4938cd28822c4fe7a3c12199960ba97b';
+        const apiUrl = 'https://newsapi.org/v2/everything?q=technology+cybersecurity+uk&apiKey=' + apiKey;
+        
+        fetch(apiUrl)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return response.json();
+          })
+          .then(data => {
+            // Process the data here
+            console.log(data);
+          })
+          .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+          });
+        
+    </script>
+</body>
+</html>
